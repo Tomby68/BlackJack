@@ -44,7 +44,6 @@ def create_deck():
 
 # The deal_cards function deals a specified number of cards
 # from the deck.
-
 def deal_cards(deck, number):
     # Initialize an accumulator for the hand value.
     hand_value = 0
