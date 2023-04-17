@@ -8,9 +8,6 @@ def main():
     hand1 = 0
     hand2 = 0
     deck = create_deck()
-    #TODO - Deal a card to each player and calculate hand value. 
-    #Print 'Player 1 was dealt...'
-    #Print 'Player 2 was dealt...'
 
 
     while hand1 < 21 and hand2 < 21:
@@ -24,13 +21,10 @@ def main():
         hand1 = update_hand_value(hand1, value, card)
         hand2 = update_hand_value(hand2, value2, card2)
 
-    #print(hand1, hand2)
 
 
 
 
-    #TODO Determine the winner.
-    #Print either:
     #Print 'There is no winner' or
     #'Player 1 wins' or
     #'Player 2 wins'
@@ -69,22 +63,13 @@ def create_deck():
             if randCard >= 11 and randCard <= 14:
                 randCard = numbers[randCard - 11]
 
-
-            #TODO Add the numbers 2-10 to the deck [Hint: you will need to check if the value is numeric]
             if str(randCard).isnumeric():
                 deck[str(randCard) + ' of ' + randSuit] = int(randCard)
-
-            #TODO Add the Ace, King, Queen, or Jack values to the deck using the dictionary special_values.
             else:
                 deck[randCard + ' of ' + randSuit] = special_values[randCard]
 
     return deck
 
-# TODO Given the player's current hand, the value of the card they were just dealt
-# and the name of the card they were just dealt, return the new value of their hand 
-# Remember: If a player is dealt an ace, the program should decide the value by:
-# The ace will be worth 11 points, unless that makes the player's hand exceed 21 points.
-# In that case the ace will be worth 1 point.
 def update_hand_value(hand, value, card):
     if 'Ace' in card:
         if (hand + 11) > 21:
