@@ -1,5 +1,3 @@
-# Blackjack starter code
-
 # Global constant for the winning number of cards
 MAX = 21
 import random
